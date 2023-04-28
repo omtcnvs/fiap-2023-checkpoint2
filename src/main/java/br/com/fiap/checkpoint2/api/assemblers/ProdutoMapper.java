@@ -2,7 +2,9 @@ package br.com.fiap.checkpoint2.api.assemblers;
 
 import br.com.fiap.checkpoint2.api.models.Produto;
 import br.com.fiap.checkpoint2.api.resources.ProdutoResource;
+import org.springframework.stereotype.Component;
 
+@Component
 public class ProdutoMapper implements AssemblerMapper<ProdutoResource, Produto> {
     @Override
     public ProdutoResource toResource(Produto produto) {
