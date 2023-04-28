@@ -5,6 +5,8 @@ import lombok.*;
 
 import java.util.Date;
 
+import static org.apache.commons.lang3.builder.ToStringBuilder.reflectionToString;
+
 @Entity
 @Table(name = "produtos")
 @Getter
@@ -36,4 +38,8 @@ public class Produto {
     @Column(name = "em_estoque")
     private Boolean emEstoque;
 
+    @Override
+    public String toString() {
+        return reflectionToString(this);
+    }
 }
