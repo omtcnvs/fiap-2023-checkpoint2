@@ -1,9 +1,7 @@
 package br.com.fiap.checkpoint2.api.services;
 
 import br.com.fiap.checkpoint2.api.assemblers.ItemPedidoMapper;
-import br.com.fiap.checkpoint2.api.dtos.ClienteDTO;
 import br.com.fiap.checkpoint2.api.dtos.ItemPedidoDTO;
-import br.com.fiap.checkpoint2.api.models.Cliente;
 import br.com.fiap.checkpoint2.api.models.ItemPedido;
 import br.com.fiap.checkpoint2.api.repositories.ItemPedidoRepository;
 import lombok.RequiredArgsConstructor;

@@ -1,9 +1,9 @@
 package br.com.fiap.checkpoint2.api.services;
 
 import br.com.fiap.checkpoint2.api.assemblers.ClienteMapper;
+import br.com.fiap.checkpoint2.api.dtos.ClienteDTO;
 import br.com.fiap.checkpoint2.api.models.Cliente;
 import br.com.fiap.checkpoint2.api.repositories.ClienteRepository;
-import br.com.fiap.checkpoint2.api.resources.ClienteResource;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -28,12 +28,12 @@ public class ClienteService {
         return this.repository.findAll();
     }
 
-    public void save(ClienteResource resource) {
+    public void save(ClienteDTO resource) {
         Cliente model = mapper.toModel(resource);
         this.repository.save(model);
     }
 
-    public void put(ClienteResource resource, Long id) {
+    public void put(ClienteDTO resource, Long id) {
         validateIfProdutoExists(this.repository.findById(id).isEmpty());
         Cliente model = mapper.toModel(resource);
         model.setId(id);
