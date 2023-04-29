@@ -19,7 +19,7 @@ public class Cliente {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
-    @Column(name = "codigo_produto")
+    @Column(name = "codigo_cliente", nullable = false)
     private String codigo;
 
     @Column(name = "nome")

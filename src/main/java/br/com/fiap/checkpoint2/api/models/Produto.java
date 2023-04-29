@@ -22,8 +22,7 @@ public class Produto {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
-    @Column(name = "codigo_produto")
-    @NotNull(message = "Codigo não informado.")
+    @Column(name = "codigo_produto", nullable = false)
     private String codigo;
 
     @Column(name = "nome")
