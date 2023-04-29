@@ -20,6 +20,10 @@ public class ProdutoService {
 
     private final ProdutoMapper mapper;
 
+//    **********************************************
+//                  MÉTODOS PÚBLICOS
+//    **********************************************
+
     public Produto getById(Long id) {
         validateIfProdutoExists(id);
         return this.repository.getReferenceById(id);
@@ -41,9 +45,21 @@ public class ProdutoService {
         this.repository.save(model);
     }
 
+
+    public void delete(Long id) {
+        validateIfProdutoExists(id);
+        Produto modelToDelete = this.repository.getReferenceById(id);
+        this.repository.delete(modelToDelete);
+    }
+
+//    **********************************************
+//                  MÉTODOS PRIVADOS
+//    **********************************************
+
     private void validateIfProdutoExists(Long id) {
         if (this.repository.findById(id).isEmpty()) {
             throw new EntityNotFoundException(PRODUTO_NOT_FOUND);
         }
     }
+
 }
