@@ -1,13 +1,17 @@
 package br.com.fiap.checkpoint2.api.models;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotNull;
 import lombok.*;
 
 import java.util.Date;
 
+import static org.apache.commons.lang3.builder.ToStringBuilder.reflectionToString;
+
 @Entity
 @Table(name = "produtos")
 @Getter
+@Setter
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
@@ -19,6 +23,7 @@ public class Produto {
     private Long id;
 
     @Column(name = "codigo_produto")
+    @NotNull(message = "Codigo não informado.")
     private String codigo;
 
     @Column(name = "nome")
@@ -36,4 +41,8 @@ public class Produto {
     @Column(name = "em_estoque")
     private Boolean emEstoque;
 
+    @Override
+    public String toString() {
+        return reflectionToString(this);
+    }
 }

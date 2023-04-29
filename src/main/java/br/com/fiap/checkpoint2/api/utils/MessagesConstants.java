@@ -8,4 +8,6 @@ public final class MessagesConstants {
 
     public static final String PRODUTO_NOT_FOUND = "Produto não encontrado.";
 
+    public static final String METHOD_NOT_IMPLEMENTED = "Método ainda não implementado.";
+
 }

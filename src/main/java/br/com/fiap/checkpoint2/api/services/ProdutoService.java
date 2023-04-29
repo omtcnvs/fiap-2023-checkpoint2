@@ -21,10 +21,8 @@ public class ProdutoService {
     private final ProdutoMapper mapper;
 
     public Produto getById(Long id) {
-        if (this.repository.findById(id).isEmpty()) {
-            throw new EntityNotFoundException(PRODUTO_NOT_FOUND);
-        }
-        return this.repository.findById(id).get();
+        validateIfProdutoExists(id);
+        return this.repository.getReferenceById(id);
     }
 
     public List<Produto> getAll() {
@@ -34,5 +32,18 @@ public class ProdutoService {
     public void save(ProdutoResource resource) {
         Produto model = mapper.toModel(resource);
         this.repository.save(model);
+    }
+
+    public void put(ProdutoResource resource, Long id) {
+        validateIfProdutoExists(id);
+        Produto model = mapper.toModel(resource);
+        model.setId(id);
+        this.repository.save(model);
+    }
+
+    private void validateIfProdutoExists(Long id) {
+        if (this.repository.findById(id).isEmpty()) {
+            throw new EntityNotFoundException(PRODUTO_NOT_FOUND);
+        }
     }
 }
