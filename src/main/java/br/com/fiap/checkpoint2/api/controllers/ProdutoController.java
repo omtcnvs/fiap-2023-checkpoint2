@@ -1,7 +1,7 @@
 package br.com.fiap.checkpoint2.api.controllers;
 
 import br.com.fiap.checkpoint2.api.models.Produto;
-import br.com.fiap.checkpoint2.api.resources.ProdutoResource;
+import br.com.fiap.checkpoint2.api.dtos.ProdutoDTO;
 import br.com.fiap.checkpoint2.api.services.ProdutoService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
@@ -39,7 +39,7 @@ public class ProdutoController {
     }
 
     @PostMapping("/save")
-    public ResponseEntity<Produto> save(@RequestBody @Valid ProdutoResource resource) {
+    public ResponseEntity<Produto> save(@RequestBody @Valid ProdutoDTO resource) {
         log.info("POST | Iniciado | {} | /save | {}", V1_PRODUTOS, resource);
         this.service.save(resource);
         log.info("POST | Finalizado | {} | /save | {}", V1_PRODUTOS, resource);
@@ -47,7 +47,7 @@ public class ProdutoController {
     }
 
     @PutMapping("/edit/{id}")
-    public ResponseEntity<Produto> edit(@RequestBody @Valid ProdutoResource resource, @PathVariable Long id) {
+    public ResponseEntity<Produto> edit(@RequestBody @Valid ProdutoDTO resource, @PathVariable Long id) {
         log.info("PUT | Iniciado | {} | /edit/{} | {}", V1_PRODUTOS, id, resource);
         this.service.put(resource, id);
         log.info("PUT | Finalizado | {} | /edit/{} | {}", V1_PRODUTOS, id, resource);

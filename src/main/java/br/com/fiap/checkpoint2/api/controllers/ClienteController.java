@@ -1,7 +1,7 @@
 package br.com.fiap.checkpoint2.api.controllers;
 
 import br.com.fiap.checkpoint2.api.models.Cliente;
-import br.com.fiap.checkpoint2.api.resources.ClienteResource;
+import br.com.fiap.checkpoint2.api.dtos.ClienteDTO;
 import br.com.fiap.checkpoint2.api.services.ClienteService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
@@ -40,7 +40,7 @@ public class ClienteController {
     }
 
     @PostMapping("/save")
-    public ResponseEntity<Cliente> save(@RequestBody @Valid ClienteResource resource) {
+    public ResponseEntity<Cliente> save(@RequestBody @Valid ClienteDTO resource) {
         log.info("POST | Iniciado | {} | /save | {}", V1_PRODUTOS, resource);
         this.service.save(resource);
         log.info("POST | Finalizado | {} | /save | {}", V1_PRODUTOS, resource);
@@ -48,7 +48,7 @@ public class ClienteController {
     }
 
     @PutMapping("/edit/{id}")
-    public ResponseEntity<Cliente> edit(@RequestBody @Valid ClienteResource resource, @PathVariable Long id) {
+    public ResponseEntity<Cliente> edit(@RequestBody @Valid ClienteDTO resource, @PathVariable Long id) {
         log.info("PUT | Iniciado | {} | /edit/{} | {}", V1_PRODUTOS, id, resource);
         this.service.put(resource, id);
         log.info("PUT | Finalizado | {} | /edit/{} | {}", V1_PRODUTOS, id, resource);

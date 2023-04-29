@@ -1,4 +1,4 @@
-package br.com.fiap.checkpoint2.api.resources;
+package br.com.fiap.checkpoint2.api.dtos;
 
 import jakarta.validation.constraints.NotBlank;
 import lombok.Builder;
@@ -6,7 +6,7 @@ import lombok.Builder;
 import java.util.Date;
 
 @Builder
-public record ProdutoResource(
+public record ProdutoDTO(
         @NotBlank(message = "Codigo deve ser informado.")
         String codigo,
         Double preco,
