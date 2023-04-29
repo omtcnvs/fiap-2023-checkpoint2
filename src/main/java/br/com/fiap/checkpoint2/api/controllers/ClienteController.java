@@ -40,16 +40,16 @@ public class ClienteController {
     }
 
     @PostMapping("/save")
-    public ResponseEntity<Cliente> save(@RequestBody @Valid ClienteResource resource) {
-        log.info("POST | Iniciado | {} | /save | {}", V1_PRODUTOS, resource);
+    public ResponseEntity<Cliente> save(@RequestBody @Valid ClienteDTO resource) {
+        log.info("POST | Iniciado | {} | /save | {}", V1_CLIENTES, resource);
         this.service.save(resource);
         log.info("POST | Finalizado | {} | /save | {}", V1_CLIENTES, resource);
         return ResponseEntity.status(HttpStatus.CREATED).build();
     }
 
     @PutMapping("/edit/{id}")
-    public ResponseEntity<Cliente> edit(@RequestBody @Valid ClienteResource resource, @PathVariable Long id) {
-        log.info("PUT | Iniciado | {} | /edit/{} | {}", V1_PRODUTOS, id, resource);
+    public ResponseEntity<Cliente> edit(@RequestBody @Valid ClienteDTO resource, @PathVariable Long id) {
+        log.info("PUT | Iniciado | {} | /edit/{} | {}", V1_CLIENTES, id, resource);
         this.service.put(resource, id);
         log.info("PUT | Finalizado | {} | /edit/{} | {}", V1_CLIENTES, id, resource);
         return ResponseEntity.ok().build();
