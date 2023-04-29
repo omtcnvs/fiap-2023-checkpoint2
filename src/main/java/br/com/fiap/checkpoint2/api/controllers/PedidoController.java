@@ -13,7 +13,6 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 import static br.com.fiap.checkpoint2.api.utils.ConstantsUtils.V1_PEDIDOS;
-import static br.com.fiap.checkpoint2.api.utils.ConstantsUtils.V1_PRODUTOS;
 
 @Slf4j
 @RestController

@@ -1,7 +1,7 @@
 package br.com.fiap.checkpoint2.api.controllers;
 
-import br.com.fiap.checkpoint2.api.models.Cliente;
 import br.com.fiap.checkpoint2.api.dtos.ClienteDTO;
+import br.com.fiap.checkpoint2.api.models.Cliente;
 import br.com.fiap.checkpoint2.api.services.ClienteService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
