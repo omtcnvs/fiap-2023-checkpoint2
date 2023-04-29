@@ -2,9 +2,7 @@ package br.com.fiap.checkpoint2.api.services;
 
 import br.com.fiap.checkpoint2.api.assemblers.PedidoMapper;
 import br.com.fiap.checkpoint2.api.dtos.PedidoDTO;
-import br.com.fiap.checkpoint2.api.dtos.ProdutoDTO;
 import br.com.fiap.checkpoint2.api.models.Pedido;
-import br.com.fiap.checkpoint2.api.models.Produto;
 import br.com.fiap.checkpoint2.api.repositories.PedidoRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
