@@ -4,6 +4,7 @@ import br.com.fiap.checkpoint2.api.assemblers.ProdutoMapper;
 import br.com.fiap.checkpoint2.api.models.Produto;
 import br.com.fiap.checkpoint2.api.repositories.ProdutoRepository;
 import br.com.fiap.checkpoint2.api.resources.ProdutoResource;
+import br.com.fiap.checkpoint2.api.utils.ValidationUtils;
 import jakarta.persistence.EntityNotFoundException;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -11,6 +12,7 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 import static br.com.fiap.checkpoint2.api.utils.MessagesConstants.PRODUTO_NOT_FOUND;
+import static br.com.fiap.checkpoint2.api.utils.ValidationUtils.validateIfProdutoExists;
 
 @Service
 @RequiredArgsConstructor
@@ -25,7 +27,7 @@ public class ProdutoService {
 //    **********************************************
 
     public Produto getById(Long id) {
-        validateIfProdutoExists(id);
+        validateIfProdutoExists(this.repository.findById(id).isEmpty());
         return this.repository.getReferenceById(id);
     }
 
@@ -39,7 +41,7 @@ public class ProdutoService {
     }
 
     public void put(ProdutoResource resource, Long id) {
-        validateIfProdutoExists(id);
+        validateIfProdutoExists(this.repository.findById(id).isEmpty());
         Produto model = mapper.toModel(resource);
         model.setId(id);
         this.repository.save(model);
@@ -47,19 +49,9 @@ public class ProdutoService {
 
 
     public void delete(Long id) {
-        validateIfProdutoExists(id);
+        validateIfProdutoExists(this.repository.findById(id).isEmpty());
         Produto modelToDelete = this.repository.getReferenceById(id);
         this.repository.delete(modelToDelete);
-    }
-
-//    **********************************************
-//                  MÉTODOS PRIVADOS
-//    **********************************************
-
-    private void validateIfProdutoExists(Long id) {
-        if (this.repository.findById(id).isEmpty()) {
-            throw new EntityNotFoundException(PRODUTO_NOT_FOUND);
-        }
     }
 
 }
