@@ -19,10 +19,6 @@ public class ProdutoService {
 
     private final ProdutoMapper mapper;
 
-//    **********************************************
-//                  MÉTODOS PÚBLICOS
-//    **********************************************
-
     public Produto getById(Long id) {
         validateIfProdutoExists(this.repository.findById(id).isEmpty());
         return this.repository.getReferenceById(id);
@@ -43,7 +39,6 @@ public class ProdutoService {
         model.setId(id);
         this.repository.save(model);
     }
-
 
     public void delete(Long id) {
         validateIfProdutoExists(this.repository.findById(id).isEmpty());

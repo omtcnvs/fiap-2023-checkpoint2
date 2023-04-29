@@ -9,5 +9,7 @@ public final class ConstantsUtils {
     public static final String V1_PRODUTOS = "/v1/produtos";
 
     public static final String V1_CLIENTES = "/v1/clientes";
+
     public static final String V1_PEDIDOS = "/v1/pedidos";
+
 }
