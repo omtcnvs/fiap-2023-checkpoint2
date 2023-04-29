@@ -25,41 +25,41 @@ public class ClienteController {
 
     @GetMapping("/{id}")
     public ResponseEntity<Cliente> getById(@PathVariable Long id) {
-        log.info("GET | Iniciado | {} | id: {}", V1_PRODUTOS, id);
+        log.info("GET | Iniciado | {} | id: {}", V1_CLIENTES, id);
         Cliente clienteFinded = this.service.getById(id);
-        log.info("GET | Finalizado | {} | id: {}", V1_PRODUTOS, id);
+        log.info("GET | Finalizado | {} | id: {}", V1_CLIENTES, id);
         return ResponseEntity.ok(clienteFinded);
     }
 
     @GetMapping
     public ResponseEntity<List<Cliente>> getAll() {
-        log.info("GET | Iniciado | {}", V1_PRODUTOS);
+        log.info("GET | Iniciado | {}", V1_CLIENTES);
         List<Cliente> clientesFinded = this.service.getAll();
-        log.info("GET | Finalizado | {}", V1_PRODUTOS);
+        log.info("GET | Finalizado | {}", V1_CLIENTES);
         return ResponseEntity.ok(clientesFinded);
     }
 
     @PostMapping("/save")
     public ResponseEntity<Cliente> save(@RequestBody @Valid ClienteDTO resource) {
-        log.info("POST | Iniciado | {} | /save | {}", V1_PRODUTOS, resource);
+        log.info("POST | Iniciado | {} | /save | {}", V1_CLIENTES, resource);
         this.service.save(resource);
-        log.info("POST | Finalizado | {} | /save | {}", V1_PRODUTOS, resource);
+        log.info("POST | Finalizado | {} | /save | {}", V1_CLIENTES, resource);
         return ResponseEntity.status(HttpStatus.CREATED).build();
     }
 
     @PutMapping("/edit/{id}")
     public ResponseEntity<Cliente> edit(@RequestBody @Valid ClienteDTO resource, @PathVariable Long id) {
-        log.info("PUT | Iniciado | {} | /edit/{} | {}", V1_PRODUTOS, id, resource);
+        log.info("PUT | Iniciado | {} | /edit/{} | {}", V1_CLIENTES, id, resource);
         this.service.put(resource, id);
-        log.info("PUT | Finalizado | {} | /edit/{} | {}", V1_PRODUTOS, id, resource);
+        log.info("PUT | Finalizado | {} | /edit/{} | {}", V1_CLIENTES, id, resource);
         return ResponseEntity.ok().build();
     }
 
     @DeleteMapping("/delete/{id}")
     public ResponseEntity<Cliente> delete(@PathVariable Long id) {
-        log.info("DELETE | Iniciado | {} | /delete/{}", V1_PRODUTOS, id);
+        log.info("DELETE | Iniciado | {} | /delete/{}", V1_CLIENTES, id);
         this.service.delete(id);
-        log.info("DELETE | Finalizado | {} | /delete/{}", V1_PRODUTOS, id);
+        log.info("DELETE | Finalizado | {} | /delete/{}", V1_CLIENTES, id);
         return ResponseEntity.noContent().build();
     }
 
