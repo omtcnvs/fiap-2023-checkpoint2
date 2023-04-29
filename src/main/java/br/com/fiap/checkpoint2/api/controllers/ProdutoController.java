@@ -16,7 +16,7 @@ import static br.com.fiap.checkpoint2.api.utils.ConstantsUtils.V1_PRODUTOS;
 
 @Slf4j
 @RestController
-@RequestMapping(V1_PRODUTOS)
+@RequestMapping(value = V1_PRODUTOS)
 @RequiredArgsConstructor
 public class ProdutoController {
 
