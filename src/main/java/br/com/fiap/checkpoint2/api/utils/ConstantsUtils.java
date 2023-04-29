@@ -12,4 +12,5 @@ public final class ConstantsUtils {
 
     public static final String V1_PEDIDOS = "/v1/pedidos";
 
+    public static final String V1_ITENS_PEDIDOS = "/v1/itens-pedidos";
 }
