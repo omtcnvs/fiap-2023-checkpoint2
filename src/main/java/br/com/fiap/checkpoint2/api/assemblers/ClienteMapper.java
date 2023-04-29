@@ -14,7 +14,7 @@ public class ClienteMapper implements AssemblerMapper<ClienteResource, Cliente> 
     public ClienteResource toResource(Cliente cliente) {
         throw new UnsupportedOperationException(METHOD_NOT_IMPLEMENTED);
     }
-    
+
     @Override
     public Cliente toModel(ClienteResource clienteResource) {
         return Cliente.builder()
