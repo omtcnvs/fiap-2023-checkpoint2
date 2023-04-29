@@ -2,11 +2,8 @@ package br.com.fiap.checkpoint2.api.services;
 
 import br.com.fiap.checkpoint2.api.assemblers.ClienteMapper;
 import br.com.fiap.checkpoint2.api.models.Cliente;
-import br.com.fiap.checkpoint2.api.models.Produto;
 import br.com.fiap.checkpoint2.api.repositories.ClienteRepository;
 import br.com.fiap.checkpoint2.api.resources.ClienteResource;
-import br.com.fiap.checkpoint2.api.resources.ProdutoResource;
-import br.com.fiap.checkpoint2.api.utils.ValidationUtils;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 

@@ -1,11 +1,8 @@
 package br.com.fiap.checkpoint2.api.controllers;
 
 import br.com.fiap.checkpoint2.api.models.Cliente;
-import br.com.fiap.checkpoint2.api.models.Produto;
 import br.com.fiap.checkpoint2.api.resources.ClienteResource;
-import br.com.fiap.checkpoint2.api.resources.ProdutoResource;
 import br.com.fiap.checkpoint2.api.services.ClienteService;
-import br.com.fiap.checkpoint2.api.utils.ConstantsUtils;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
