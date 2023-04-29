@@ -1,11 +1,11 @@
-package br.com.fiap.checkpoint2.api.resources;
+package br.com.fiap.checkpoint2.api.dtos;
 
 import lombok.Builder;
 
 import java.util.Date;
 
 @Builder
-public record PedidoResource(
+public record PedidoDTO(
 
         Long numeroPedido,
         String codigoCliente,
